@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}
+Contact | BaseCars
+{% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid my-4">
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <form method="post" action="/contact">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="Email1" name="email" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label  class="form-label">Phone</label>
+                    <input type="Number" class="form-control" id="Phone" name="phone" aria-describedby="emailHelp">
+                    
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Query</label>
+                    <textarea type="textarea" class="form-control" id="textArea" name="query" aria-describedby="emailHelp">
+                    </textarea>
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+    {% endblock body %}
